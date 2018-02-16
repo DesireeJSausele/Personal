@@ -18,7 +18,7 @@ You can find a GitHub tutorial [here](https://github.com/AguaClara/aguaclara_tut
 
 1. Below this, write a sentence or two about yourself:
 
-My name is Desiree and I am a junior in Environmental Engineering.
+My name is Desiree and I am a junior in environmental engineering.
 
 
 
@@ -56,7 +56,7 @@ There are several different ways to emphasize text: *italics*, **bold**, ***comb
 
 1. Write 4 of your favorite words using each type of emphasis:
 
-*italics*, **bold**, ***combined***, ~~strikethrough~~
+*water*, **sustainability**, ***environmentalism***, ~~serendipity~~
 
 ## Lists
 Lists are very easy to do. For a bulleted list, use the asterisk and for a numbered list, use the number followed by a period. Hitting `Enter` after a bullet or number continues the list automatically. Hitting `Enter` followed by `Tab` gets you a sub item for a bulleted list. For example:
@@ -67,12 +67,14 @@ Lists are very easy to do. For a bulleted list, use the asterisk and for a numbe
 
 1. Now try it out for yourself. Write down a list of things you hope to achieve this semester, and elaborate on them with sub items:
 
-*
-  - a
-* b
-  - b
-* c
-  - c
+* Run a successful experiment
+  - The team must finish troubleshooting the apparatus before we can run a proper experiment and determine removal efficiencies.
+* Design a gravity powered model
+  - A bench scale gravity powered reactor that could be tested in the field would be very beneficial to the team.
+* Participate in more outreach events
+  - I really enjoyed the walk for water last semester, so I'd like to get more involved in the outreach events.
+
+
 ## Images
 To input images, you'll either need an image URL or a file path to your image. For AguaClara work, your repository should have a folder for images where you can get an image URL or file path from. In this tutorial, I've made an image folder with a picture in the `aguaclara_tutorial` repository.
 
@@ -95,7 +97,7 @@ Using a URL:
 ![CornellSeal](https://github.com/AguaClara/aguaclara_tutorial/blob/master/Images/Cornell_University_seal.svg.png?raw=true)
 
 Using a Relative File Path:
-![CornellSeal](/Images/Cornell_University_seal.svg.png)
+![CornellSeal](C:\Users\Desiree\github\aguaclara_tutorial\Images\Cornell_University_seal.svg.png)
 
 Image with Height and Width Adjusted:
 
@@ -104,14 +106,14 @@ Image with Height and Width Adjusted:
 1. Make an images folder in your personal repository, and import an image of your hometown or pet from that folder. Do it unformatted using the image URL and the relative file path method, then do it again but instead change the height and width of your image:
 
 Using a URL:
-![my_pet](https://github.com/DesireeJSausele/Personal/blob/master/desiree_pet.jpg?raw=true)
+![my_pet](https://github.com/DesireeJSausele/Personal/blob/master/Images/desiree_pet.jpg?raw=true)
 
 Using a Relative File Path:
 ![my_pet](/Images/desiree_pet.jpg)
 
 Image with Height and Width Adjusted:
 
-<img src="https://github.com/DesireeJSausele/Personal/blob/master/desiree_pet.jpg?raw=true" height=250 width=200>
+<img src="https://github.com/DesireeJSausele/Personal/blob/master/Images/desiree_pet.jpg?raw=true" height=250 width=200>
 
 
 
@@ -125,7 +127,7 @@ To insert a link, all you have to do is enclose your linked text in `[]` followe
 
 1. Below, write a sentence describing your major, and insert a link to your major's department website.
 
-Environmental engineering
+Environmental engineering seeks to address a number of environmental issues caused by humans. Read more about it [on the major's website](https://enve.cornell.edu/).
 
 ## Tables
 Tables in Markdown are slightly harder, but there's an automatic function that allows to you make one easily. When working in a `.md` file, all you have to do is type `table` and hit enter. It will initialize a 2 by 2 table, but you can easily increase the width by going to the last column and hitting `Tab` or it's height by clicking in any cell and hitting `Enter`. Notice in the example how the text below the header is justified left, center, and right. This is due to the line below the header. A line with a colon on the far left of the dashes only indicates left justified, colons on both sides of the dashes indicates centered, and a colon on the far right of the dashes indicates right justified.
@@ -155,7 +157,11 @@ When making tables, it's not important that the lines match up. For example, the
 
 1. Create a table listing your 3 favorite animals, foods, books, and places on campus. Try out the different cell justifications:
 
-<!--- Fill you answer here. --->
+| Animals| Foods |   Books  |  Places   |
+|:---------- | :---------: | :---: |  --------: |
+| Dogs  | Tacos  |   Bossypants|   Engineering Quad  |
+| Cats   |  Avocados |   Inferno |   Hollister Hall  |
+|  Frogs|   Pizza |  The Time Traveler's Wife   |  AguaClara Lab   |
 
 
 
@@ -174,11 +180,13 @@ For larger code blocks where you report multiple lines of code, you always start
 
 1. Below, write a Python print function with a different string using syntax highlighting:
 
-<!--- Fill you answer here. --->
+`print('Hello world!')`
 
 2. Now write a block of Python code for that same print statement:
 
-<!--- Fill you answer here. --->
+```python
+`print('Hello world!')`
+```
 
 
 
@@ -189,7 +197,7 @@ $$ Re_D = \frac{uD}{\nu} $$
 
 1. Try it on your own! Write your favorite equation using LaTeX source code and toggle the LaTeX preview to see it formatted:
 
-<!--- Fill you answer here. --->
+$$ x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}} $$
 
 
 # Using Python and Running it With Hydrogen in Markdown
@@ -200,6 +208,7 @@ $$ Re_D = \frac{uD}{\nu} $$
 3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
 
 ```python
+
 from aide_design.play import*
 
 xArray = u.Quantity(np.arange(0.1, 0.5, 0.01), u.m)
@@ -225,39 +234,63 @@ These questions are meant to test what you've learned from the Python Basics tut
 
 1. Write a conditional statement with 3 conditions: when x is 10, when x is 1, and when x is anything other than 1 or 10. For each condition, have your code print what the value is or isn't.
 
-<!--- Fill you answer here. --->
+```python
+x = 1
+if x == 10:
+  print('x is 10')
+elif x == 1:
+  print('x is 1')
+else:
+  print('x is neither 10 nor 1')  
+```
 
 
 
 
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
-<!--- Fill you answer here. --->
-
-
-
-
-
-
-
+```python
+i = 0
+for j in range(20):
+   i = i + j
+print(i)
+```
 
 
 3. Using the NumPy package, calculate the value of sin(4), and use the sigfig function from the utility module in aide_design to get your answer to 3 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
 
-<!--- Fill you answer here. --->
-
-
+```python
+import numpy as np
+import aide_design as ad
+from aide_design import utility as ut
+i = np.sin(4)
+j = ut.sig(i, 3)
+print(j)
+```
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
+```python
+myList = [0, 1, 2, 3, 4]
+length = len(myList)
+print('# of elements in list : ', length)
 
-<!--- Fill you answer here. --->
+import aide_design
+from aide_design.play import*
 
+myArray = np.array(myList)
+myArrayUnits = myArray * u.m
 
+newArr = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]])
+newArrMidCol = newArr[:,1]
+newArrMidRow = newArr[1,:]
+print(newArrMidCol)
+print(newArrMidRow)
 
+newArrSize = np.size(newArr)
+print('The size of newArr is ', newArrSize)
 
-
-
-
+newArrL = newArr * u.L
+```
 
 
 5.  One of the most famous equations for a particle diffusing through a liquid at low Reynolds Number is the Stokes-Einstein Equation where k<sub>B</sub> is the Boltzmann constant, T is the temperature in Kelvin, eta is the dynamic viscosity in kg/(m*s), and r is the particle radius. Write a function that takes a temperature in Kelvin, a particle radius in meters, and a viscosity of water to calculate the diffusion coefficient D.
@@ -270,30 +303,62 @@ $$ D = \frac{k_BT}{6\pi\eta r} $$
 
 ```python
 from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
+import aide_design
+from aide_design.play import*
+import math as m
+ # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
-kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
+def SEeqn(T, r, eta):
 
-# Write your code here
 
+  kB = kB_sc * u.joule / u.kelvin
+  T = T * u.kelvin
+  r = r * u.m
+  eta = eta * u.kilogram/ (u.m * u.s)
+
+  D = (kB*T)/(6*m.pi*eta*r)
+  return ((D).to_base_units())
+
+SEeqn(100, 1, 1)
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save your plot to your images folder in your personal repository, and display it below using `plt.show()` and an image insertion using a relative file path to the image.
 
-<!--- Fill you answer here. --->
+```python
+from aide_design.play import*
+
+xArray = u.Quantity(np.arange(273, 473, 1), u.kelvin)
+
+yArray = pc.re_pipe(2 *u.m**3/u.s, 0.4 *u.m, pc.viscosity_kinematic(xArray))
+
+
+
+
+plt.plot(xArray,yArray , '-', label = 'Re')
+plt.xlabel('Temperature (Kelvin)')
+plt.ylabel('Reynolds Number (Meters)')
+plt.title('Reynolds Number for Varying temperature')
+plt.minorticks_on()
+plt.grid(which = 'major')
+plt.grid(which = 'minor')
+plt.legend(loc = 'lower right', ncol = 1)
+plt.tight_layout()
+plt.savefig('./Images/Reynolds.png')
+plt.show()
+
+```
 
 # Teletype Basics
 In this section you and your team can practice using Teletype together.
 
 1. Create a portal for your team members to join. Have them write you words of  encouragement in the space below, and be sure they sign their name next to their encouragements.
 
-<!--- Fill you answer here. --->
-
-
-
+Next time don't lie to me about Python.-Philip
+Python code is good. Tigran mehrabyan
+Good luck on this tutorial! - Victoria
 
 2. Have you other team members create a portal for you to join. In their Markdown file, write them something encouraging, and sign your name.
 
-<!--- Fill you answer here. --->
 
 
 # GitHub Basics
