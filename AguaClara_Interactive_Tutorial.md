@@ -208,7 +208,6 @@ $$ x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}} $$
 3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
 
 ```python
-
 from aide_design.play import*
 
 xArray = u.Quantity(np.arange(0.1, 0.5, 0.01), u.m)
@@ -238,7 +237,7 @@ These questions are meant to test what you've learned from the Python Basics tut
 x = 1
 if x == 10:
   print('x is 10')
-elif x == 1:
+elif x == 1 :
   print('x is 1')
 else:
   print('x is neither 10 nor 1')  
