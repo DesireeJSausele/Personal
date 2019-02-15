@@ -6,7 +6,7 @@
 3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
 
 ```python
-from aide_design.play import*
+from aguaclara.play import*
 
 xArray = u.Quantity(np.arange(0.1, 0.5, 0.01), u.m)
 
@@ -25,6 +25,7 @@ plt.grid(which = 'minor')
 plt.legend(loc = 'lower right', ncol = 1)
 plt.show()
 ```
+1 only runs the code in the one line, 2 runs the line of code and moves down to the next line, 3 allows you to run multiple lines of code simultaneously.
 
 ## Python Basics
 These questions are meant to test what you've learned from the Python Basics tutorial. If you need help answering a question, refer there first and use other online resources before seeking a Subteam Lead or RA. Be sure to run all your code with Hydrogen. When you code, make sure your using proper [variable naming](https://github.com/AguaClara/aide_design/wiki/Variable-Naming) and [coding standards](https://github.com/AguaClara/aide_design/wiki/Standards)
@@ -38,9 +39,8 @@ if x == 10:
 elif x == 1 :
   print('x is 1')
 else:
-  print('x is neither 10 nor 1')  
+  print('x is neither 10 nor 1')
 ```
-
 
 
 
@@ -58,11 +58,13 @@ print(i)
 
 ```python
 import numpy as np
-import aide_design as ad
-from aide_design.play import*
-import utility as ut
+import aguaclara
+from aguaclara.play import*
+import aguaclara.core.utility as ut
+
 i = np.sin(4) * u.m
-j = ut.sig(i, 2)
+j = ut.round_sf(i, 2)
+print(i)
 print(j)
 ```
 
@@ -75,8 +77,8 @@ myList = [0, 1, 2, 3, 4]
 length = len(myList)
 print('# of elements in list : ', length)
 
-import aide_design
-from aide_design.play import*
+import aguaclara
+from aguaclara.play import*
 
 myArray = np.array(myList)
 myArrayUnits = myArray * u.m
@@ -94,40 +96,48 @@ newArrL = newArr * u.L
 ```
 
 
+
+
+
+
+
+
 5.  One of the most famous equations for a particle diffusing through a liquid at low Reynolds Number is the Stokes-Einstein Equation where k<sub>B</sub> is the Boltzmann constant, T is the temperature in Kelvin, eta is the dynamic viscosity in kg/(m*s), and r is the particle radius. Write a function that takes a temperature in Kelvin, a particle radius in meters, and a viscosity of water to calculate the diffusion coefficient D.
 
     Since this requires the Boltzmann Constant from SciPy, I've started the code for you with an import. Add a function call at the end of your code block and put some numbers into the inputs. Run your code with Hydrogen.
 
     *(Hint: You'll want to make sure Temperature input is turned into Kelvin and radius input is turned into meters. Your answer should also be in base units How might you do this? Check back to the Python Basics tutorial where I wrote an Ideal Gas function)*
 
-    $$ D = \frac{k_BT}{6\pi\eta r} $$
+$$ D = \frac{k_BT}{6\pi\eta r} $$
 
-    ```python
-    from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
-    import aide_design
-    from aide_design.play import*
-    import math as m
-     # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
+```python
+from scipy.constants import Boltzmann as kB_sc # I've imported the unitless value for kB from SciPy
 
-    def SEeqn(T, r, eta):
+import aguaclara
+from aguaclara.play import*
+import math as m
+
+kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
+
+def SEeqn(T, r, eta):
 
 
-      kB = kB_sc * u.joule / u.kelvin
-      T = T * u.kelvin
-      r = r * u.m
-      eta = eta * u.kilogram/ (u.m * u.s)
+  kB = kB_sc * u.joule / u.kelvin
+  T = T * u.kelvin
+  r = r * u.m
+  eta = eta * u.kilogram/ (u.m * u.s)
 
-      D = (kB*T)/(6*m.pi*eta*r)
-      return ((D).to_base_units())
+  D = (kB*T)/(6*m.pi*eta*r)
+  return ((D).to_base_units())
 
-    SEeqn(100, 1, 1)
-    ```
+SEeqn(100, 1, 1)
 
+```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
 ```python
-from aide_design.play import*
+from aguaclara.play import*
 
 xArray = u.Quantity(np.arange(273, 473, 1), u.kelvin)
 
@@ -145,9 +155,8 @@ plt.grid(which = 'major')
 plt.grid(which = 'minor')
 plt.legend(loc = 'lower right', ncol = 1)
 plt.tight_layout()
-plt.savefig('./Images/Reynolds.png')
+plt.savefig('aguaclara_tutorial/Images/Reynolds.png')
 plt.show()
-
 ```
 
 

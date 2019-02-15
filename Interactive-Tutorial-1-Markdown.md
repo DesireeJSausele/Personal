@@ -29,15 +29,15 @@ Write 4 of your favorite words using each type of emphasis:
 Make an ordered list of 3 things you hope to achieve this semester, and elaborate on them with sub items. Then, make an unordered list of 3 classes that you're taking this semester:
 
 1. Run a successful experiment
-    1. The team must finish troubleshooting the apparatus before we can run a proper experiment.
+    1. The team must finish making a new sed tube before we can run a proper experiment.
 2. Complete this tutorial
-    1. I would like to successfully get this assignment over.
+    1. I would like to successfully finish this assignment.
 3. Make more friends in AguaClara
     1. I want to go to more AguaClara events to get to know more of the new members!
 
-- PLBIO 2400: Green World/Blue Planet
-- BEE 4270: Water Measurement and Analysis
-- BEE 4730: Watershed engineering
+- CEE 4520
+- BEE 4710
+- BEE 3922
 
 ## Links
 
@@ -52,9 +52,9 @@ Insert the Cornell seal image with:
   2. A URL (https://raw.githubusercontent.com/AguaClara/aguaclara_tutorial/master/Images/Cornell_University_seal.svg.png)
 
 
-![CornellSeal](/Images/Cornell_University_seal.png)
+  ![CornellSeal](./Images/Cornell_University_seal.png)
 
-![CornellSeal](https://raw.githubusercontent.com/AguaClara/aguaclara_tutorial/master/Images/Cornell_University_seal.png)
+  ![CornellSeal](https://github.com/AguaClara/aguaclara_tutorial/blob/master/images/Cornell_University_seal.png?raw=true)
 
 ## Code Formatting
 
@@ -77,7 +77,6 @@ def foo():
 ```
 
 
-
 ## Tables
 
 Create a table listing your 3 favorite animals, books, and places on campus. Use a different alignment for each column.
@@ -86,7 +85,7 @@ Create a table listing your 3 favorite animals, books, and places on campus. Use
 |:---------- | :---: |  --------: |
 | Dogs  |  Bossypants|   Engineering Quad  |
 | Cats   |   Inferno |   Hollister Hall  |
-|  Frogs|  The Time Traveler's Wife   |  AguaClara Lab   |<!--- Write your answer here. --->
+|  Tortoises |  The Time Traveler's Wife   |  AguaClara Lab   |
 
 
 ## Blockquotes
